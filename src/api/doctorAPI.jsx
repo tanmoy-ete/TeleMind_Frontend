@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = `${process.env.REACT_APP_API_URL}/api`;
+const API_BASE_URL = "https://telemind-backend-3.onrender.com/api";
 export const getDoctors = async () => {
   try {
     const response = await axios.get(`${API_BASE_URL}/doctors`, {

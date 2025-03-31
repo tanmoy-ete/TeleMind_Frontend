@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = `${process.env.REACT_APP_API_URL}/api/users`; // Backend API URL
+const API_BASE_URL = "https://telemind-backend-3.onrender.com/api/users"; // Backend API URL
 
 // Function to login a user
 export const loginUser = async (formData) => {
