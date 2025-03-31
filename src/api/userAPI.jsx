@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:5000/api/users"; // Backend API URL
+const API_BASE_URL = `${process.env.REACT_APP_API_URL}/api/users`; // Backend API URL
 
 // Function to login a user
 export const loginUser = async (formData) => {
