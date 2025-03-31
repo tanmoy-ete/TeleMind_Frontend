@@ -1,12 +1,8 @@
 {
-    "root": "dist/",
-    "clean_urls": false,
-    "routes": {
-      "/**": "index.html"
-    },
-    "headers": {
-      "/**": {
-        "Cache-Control": "public, max-age=0"
-      }
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
-  }
+  ]
+}
