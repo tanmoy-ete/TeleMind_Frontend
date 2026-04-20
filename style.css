@@ -11,7 +11,7 @@ body {
 }
 /* Background for Home Page */
 .home-page {
-  background: url('/doctor.jpg');
+  background: url('doctor.jpg');
   background-size: contain;
   background-position: right center;
   background-repeat: no-repeat;
@@ -30,7 +30,6 @@ body {
 
 /* Background for Contact Us Page */
 .contact-page {
-  background: url('/background3.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -38,7 +37,6 @@ body {
   padding-top: 90px;
 }
 .privacy-page {
-  background: url('/background4.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
