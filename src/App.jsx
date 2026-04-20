@@ -10,7 +10,6 @@ function App() {
 
   return (
     <div className="app" dir={language === 'bn' ? 'rtl' : 'ltr'}>
-      <Header />
       <Navbar />
       <main>
         <Outlet />
