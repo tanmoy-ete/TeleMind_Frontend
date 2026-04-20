@@ -28,7 +28,7 @@ createRoot(document.getElementById('root')).render(
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
             <Route path="privacy" element={<Privacy />} />
-            <Route path="user" element={<User />} />
+            <Route path="profile/me" element={<User />} />
             <Route path="consult" element={<Consult />} />
             <Route path="confirm-appointment" element={<ConfirmAppointment />} />
             <Route path="growthreport" element={<GrowthReport />} />
