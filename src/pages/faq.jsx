@@ -7,224 +7,310 @@ const FAQ = () => {
 
   const faqData = [
     {
-      category: "Emotional Well-being",
+      category: "Personal Information",
       questions: [
         {
-          type: "rating",
-          question: "1. How often do you feel genuinely happy?",
-          labels: ["Never", "Rarely", "Sometimes", "Often", "Always"],
+          id: "age",
+          type: "number",
+          question: "1. What is your age?",
+          placeholder: "Enter your age (18–60)",
+          min: 18, max: 60,
         },
         {
-          type: "rating",
-          question: "2. How frequently do you experience feelings of sadness or hopelessness?",
-          labels: ["Never", "Rarely", "Sometimes", "Often", "Always"],
+          id: "gender",
+          type: "select",
+          question: "2. What is your gender?",
+          options: ["Male", "Female", "Other"],
         },
         {
-          type: "rating",
-          question: "3. How well do you manage negative emotions like frustration or disappointment?",
-          labels: ["Very Poorly", "Poorly", "Moderately", "Well", "Very Well"],
+          id: "marital_status",
+          type: "select",
+          question: "3. What is your marital status?",
+          options: ["Single", "Married", "Divorced"],
         },
         {
-          type: "rating",
-          question: "4. How often do you experience emotional numbness?",
-          labels: ["Never", "Rarely", "Sometimes", "Often", "Always"],
+          id: "education_level",
+          type: "select",
+          question: "4. What is your highest education level?",
+          options: ["High School", "Bachelor", "Master", "PhD"],
         },
         {
-          type: "rating",
-          question: "5. How often do you feel self-compassionate and kind toward yourself?",
-          labels: ["Never", "Rarely", "Sometimes", "Often", "Always"],
+          id: "employment_status",
+          type: "select",
+          question: "5. What is your current employment status?",
+          options: ["Student", "Employed", "Self-Employed", "Unemployed"],
         },
       ],
     },
     {
-      category: "Stress and Coping Mechanisms",
+      category: "Sleep & Physical Health",
       questions: [
         {
-          type: "rating",
-          question: "1. How frequently do you feel overwhelmed by daily responsibilities?",
-          labels: ["Never", "Rarely", "Sometimes", "Often", "Always"],
+          id: "sleep_hours",
+          type: "number",
+          question: "1. How many hours do you sleep on average per day?",
+          placeholder: "Enter hours (3–10)",
+          min: 3, max: 10, step: 0.5,
         },
         {
-          type: "rating",
-          question: "2. How effectively do you cope with stressful situations?",
-          labels: ["Not at all", "Slightly", "Moderately", "Well", "Extremely well"],
+          id: "physical_activity_hours_per_week",
+          type: "number",
+          question: "2. How many hours per week do you engage in physical activity?",
+          placeholder: "Enter hours (0–15)",
+          min: 0, max: 15, step: 0.5,
         },
         {
-          type: "rating",
-          question: "3. How often do you engage in stress-relieving activities like meditation or hobbies?",
-          labels: ["Never", "Rarely", "Sometimes", "Often", "Daily"],
+          id: "screen_time_hours_per_day",
+          type: "number",
+          question: "3. How many hours per day do you spend on screens (phone, computer, TV)?",
+          placeholder: "Enter hours (1–12)",
+          min: 1, max: 12, step: 0.5,
         },
         {
-          type: "rating",
-          question: "4. How often do you experience physical symptoms related to stress, such as headaches or fatigue?",
-          labels: ["Never", "Rarely", "Sometimes", "Often", "Always"],
-        },
-        {
-          type: "rating",
-          question: "5. How confident are you in your ability to manage unexpected life challenges?",
-          labels: ["Not at all", "Slightly", "Moderately", "Confident", "Very Confident"],
+          id: "working_hours_per_week",
+          type: "number",
+          question: "4. How many hours per week do you work or study?",
+          placeholder: "Enter hours (20–70)",
+          min: 20, max: 70,
         },
       ],
     },
     {
-      category: "Social Connections and Relationships",
+      category: "Stress & Work",
       questions: [
         {
-          type: "rating",
-          question: "1. How often do you feel a strong sense of belonging in your relationships?",
-          labels: ["Never", "Rarely", "Sometimes", "Often", "Always"],
+          id: "work_stress_level",
+          type: "scale",
+          question: "1. How would you rate your work-related stress level?",
+          min: 1, max: 10,
+          leftLabel: "No Stress", rightLabel: "Extreme Stress",
         },
         {
-          type: "rating",
-          question: "2. How often do you feel isolated or lonely?",
-          labels: ["Never", "Rarely", "Sometimes", "Often", "Always"],
+          id: "academic_pressure_level",
+          type: "scale",
+          question: "2. How much academic pressure do you feel?",
+          min: 1, max: 10,
+          leftLabel: "No Pressure", rightLabel: "Extreme Pressure",
         },
         {
-          type: "rating",
-          question: "3. How comfortable do you feel in social situations?",
-          labels: ["Very Uncomfortable", "Uncomfortable", "Neutral", "Comfortable", "Very Comfortable"],
+          id: "job_satisfaction_score",
+          type: "scale",
+          question: "3. How satisfied are you with your job or studies?",
+          min: 1, max: 10,
+          leftLabel: "Very Dissatisfied", rightLabel: "Very Satisfied",
         },
         {
-          type: "rating",
-          question: "4. How often do you have meaningful conversations with close friends or family?",
-          labels: ["Never", "Rarely", "Sometimes", "Often", "Daily"],
-        },
-        {
-          type: "rating",
-          question: "5. How often do you feel emotionally supported by others?",
-          labels: ["Never", "Rarely", "Sometimes", "Often", "Always"],
+          id: "financial_stress_level",
+          type: "scale",
+          question: "4. How much financial stress are you currently experiencing?",
+          min: 1, max: 10,
+          leftLabel: "No Stress", rightLabel: "Extreme Stress",
         },
       ],
     },
     {
-      category: "Mental Health Symptom Monitoring",
+      category: "Mental Health Symptoms",
       questions: [
         {
-          type: "rating",
-          question: "1. How often do you experience racing thoughts or excessive worrying?",
-          labels: ["Never", "Rarely", "Sometimes", "Often", "Always"],
+          id: "anxiety_score",
+          type: "scale",
+          question: "1. How severe is your anxiety on a daily basis?",
+          min: 1, max: 10,
+          leftLabel: "Not Anxious", rightLabel: "Severely Anxious",
         },
         {
-          type: "rating",
-          question: "2. How often do you have trouble concentrating or making decisions?",
-          labels: ["Never", "Rarely", "Sometimes", "Often", "Always"],
+          id: "depression_score",
+          type: "scale",
+          question: "2. How often do you feel depressed, empty, or hopeless?",
+          min: 1, max: 10,
+          leftLabel: "Never", rightLabel: "Always",
         },
         {
-          type: "rating",
-          question: "3. How frequently do you experience changes in appetite or weight?",
-          labels: ["Never", "Rarely", "Sometimes", "Often", "Always"],
+          id: "stress_level",
+          type: "scale",
+          question: "3. How would you rate your overall stress level?",
+          min: 1, max: 10,
+          leftLabel: "Very Low", rightLabel: "Very High",
         },
         {
-          type: "rating",
-          question: "4. How often do you have difficulty falling or staying asleep?",
-          labels: ["Never", "Rarely", "Sometimes", "Often", "Always"],
+          id: "mood_swings_frequency",
+          type: "scale",
+          question: "4. How frequently do you experience mood swings?",
+          min: 1, max: 10,
+          leftLabel: "Rarely", rightLabel: "Very Frequently",
         },
         {
-          type: "rating",
-          question: "5. How frequently do you experience unexplained physical symptoms like dizziness or nausea?",
-          labels: ["Never", "Rarely", "Sometimes", "Often", "Always"],
+          id: "concentration_difficulty_level",
+          type: "scale",
+          question: "5. How difficult is it for you to concentrate or focus?",
+          min: 1, max: 10,
+          leftLabel: "No Difficulty", rightLabel: "Extreme Difficulty",
+        },
+        {
+          id: "social_support_score",
+          type: "scale",
+          question: "6. How strong is your social support from friends and family?",
+          min: 1, max: 10,
+          leftLabel: "Very Weak", rightLabel: "Very Strong",
         },
       ],
     },
     {
-      category: "Lifestyle and Well-being",
+      category: "Medical & Personal History",
       questions: [
         {
-          type: "rating",
-          question: "1. How many hours of sleep do you get on average each night?",
-          labels: ["Less than 4", "4-5", "6-7", "7-8", "More than 8"],
+          id: "panic_attack_history",
+          type: "yesno",
+          question: "1. Have you ever experienced a panic attack?",
         },
         {
-          type: "rating",
-          question: "2. How would you rate the quality of your sleep?",
-          labels: ["Very Poor", "Poor", "Average", "Good", "Excellent"],
+          id: "family_history_mental_illness",
+          type: "yesno",
+          question: "2. Does anyone in your immediate family have a history of mental illness?",
         },
         {
-          type: "rating",
-          question: "3. How often do you engage in physical activity or exercise?",
-          labels: ["Never", "Rarely", "Sometimes", "Often", "Daily"],
+          id: "previous_mental_health_diagnosis",
+          type: "yesno",
+          question: "3. Have you ever been diagnosed with a mental health condition?",
         },
         {
-          type: "rating",
-          question: "4. How balanced do you feel your diet is?",
-          labels: ["Very Unbalanced", "Unbalanced", "Neutral", "Balanced", "Very Balanced"],
+          id: "therapy_history",
+          type: "yesno",
+          question: "4. Have you ever attended therapy or psychological counseling?",
         },
         {
-          type: "rating",
-          question: "5. How often do you engage in activities that bring you joy?",
-          labels: ["Never", "Rarely", "Sometimes", "Often", "Always"],
+          id: "substance_use",
+          type: "yesno",
+          question: "5. Do you currently use any addictive substances (alcohol, tobacco, drugs)?",
         },
       ],
     },
   ];
 
-  const handleRatingChange = (categoryIndex, questionIndex, value) => {
-    const key = `${categoryIndex}-${questionIndex}`;
-    setAnswers({ ...answers, [key]: value });
+  const handleChange = (id, value) => {
+    setAnswers((prev) => ({ ...prev, [id]: value }));
   };
 
   const handleSubmit = () => {
-    localStorage.setItem("answers", JSON.stringify(answers)); // Save answers to localStorage
-    alert("Submission Successful!!!"); // Show popup
-    navigate("/"); // Redirect to homepage
+    const allIds = faqData.flatMap((s) => s.questions.map((q) => q.id));
+    const unanswered = allIds.filter(
+      (id) => answers[id] === undefined || answers[id] === ""
+    );
+    if (unanswered.length > 0) {
+      alert(`Please answer all questions before submitting. (${unanswered.length} remaining)`);
+      return;
+    }
+    localStorage.setItem("mentalHealthAnswers", JSON.stringify(answers));
+    navigate("/growthreport");
   };
-
-
 
   return (
     <div className="faq-page">
       <div className="statement">
-      <h2>Mental Health Assessment</h2>
-      <p>
-        Rate the following questions sincerely and properly to assess your mental condition. 
-        We will provide you a mental status report to replicate your mental condition. 
-        These questions are verified by psychiatrists and doctors.
-      </p>
-    </div>
+        <h2>Mental Health Assessment</h2>
+        <p>
+          Answer the following questions honestly to assess your mental health.
+          Your responses will be analyzed by our AI model to generate a
+          personalized mental health report. All information is private and confidential.
+        </p>
+      </div>
+
       {faqData.map((section, sectionIndex) => (
         <div key={sectionIndex} className="faq-section">
           <h2>{section.category}</h2>
-          {section.questions.map((item, questionIndex) => {
-            const key = `${sectionIndex}-${questionIndex}`;
-            const currentValue = answers[key] || 0;
-            
-            return (
-              <div key={key} className="faq-item">
-                <h3>{item.question}</h3>
-                {item.type === "rating" && (
-                  <div className="rating-options-container">
-                    {item.labels.map((label, index) => {
-                      const value = index + 1;
-                      return (
-                        <label 
-                          key={value}
-                          className={`rating-option ${currentValue === value ? "selected" : ""}`}
-                        >
-                          <input
-                            type="radio"
-                            name={`rating-${key}`}
-                            value={value}
-                            checked={currentValue === value}
-                            onChange={() => handleRatingChange(sectionIndex, questionIndex, value)}
-                            className="visually-hidden"
-                          />
-                          <div className="rating-value">{value}</div>
-                          <div className="rating-label">{label}</div>
-                        </label>
-                      );
-                    })}
+          {section.questions.map((item) => (
+            <div key={item.id} className="faq-item">
+              <h3>{item.question}</h3>
+
+              {/* Number input */}
+              {item.type === "number" && (
+                <input
+                  type="number"
+                  className="faq-input"
+                  placeholder={item.placeholder}
+                  min={item.min}
+                  max={item.max}
+                  step={item.step || 1}
+                  value={answers[item.id] || ""}
+                  onChange={(e) =>
+                    handleChange(item.id, parseFloat(e.target.value))
+                  }
+                />
+              )}
+
+              {/* Dropdown select */}
+              {item.type === "select" && (
+                <select
+                  className="faq-select"
+                  value={answers[item.id] || ""}
+                  onChange={(e) => handleChange(item.id, e.target.value)}
+                >
+                  <option value="" disabled>Select an option</option>
+                  {item.options.map((opt) => (
+                    <option key={opt} value={opt}>{opt}</option>
+                  ))}
+                </select>
+              )}
+
+              {/* 1–10 scale slider */}
+              {item.type === "scale" && (
+                <div className="scale-container">
+                  <div className="scale-labels">
+                    <span>{item.leftLabel}</span>
+                    <span>{item.rightLabel}</span>
                   </div>
-                )}
-              </div>
-            );
-          })}
+                  <div className="scale-options">
+                    {Array.from({ length: 10 }, (_, i) => i + 1).map((val) => (
+                      <label
+                        key={val}
+                        className={`scale-option ${answers[item.id] === val ? "selected" : ""}`}
+                      >
+                        <input
+                          type="radio"
+                          name={`scale-${item.id}`}
+                          value={val}
+                          checked={answers[item.id] === val}
+                          onChange={() => handleChange(item.id, val)}
+                          className="visually-hidden"
+                        />
+                        <div className="scale-value">{val}</div>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Yes / No binary */}
+              {item.type === "yesno" && (
+                <div className="yesno-container">
+                  {["Yes", "No"].map((opt) => {
+                    const val = opt === "Yes" ? 1 : 0;
+                    return (
+                      <label
+                        key={opt}
+                        className={`yesno-option ${answers[item.id] === val ? "selected" : ""}`}
+                      >
+                        <input
+                          type="radio"
+                          name={`yesno-${item.id}`}
+                          value={val}
+                          checked={answers[item.id] === val}
+                          onChange={() => handleChange(item.id, val)}
+                          className="visually-hidden"
+                        />
+                        {opt}
+                      </label>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       ))}
-      <button
-       className="submit-button"
-       onClick={handleSubmit}
-      > 
-        Submit Answers
+
+      <button className="submit-button" onClick={handleSubmit}>
+        Submit & Generate Report
       </button>
     </div>
   );
