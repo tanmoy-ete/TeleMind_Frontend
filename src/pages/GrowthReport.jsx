@@ -34,7 +34,7 @@ const GrowthReport = () => {
         }
 
         const res = await fetch(
-          `${import.meta.env.VITE_BACKEND_URL}/api/predict`,
+          `${import.meta.env.VITE_API_URL}/api/predict`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
